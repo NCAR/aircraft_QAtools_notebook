@@ -1,0 +1,7 @@
+name: qatools
+
+dependencies:
+  - netCDF4
+  - pandas
+  - matplotlib
+  - bokeh
