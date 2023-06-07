@@ -5,3 +5,5 @@ dependencies:
   - pandas
   - matplotlib
   - bokeh
+  - numpy
+  - metpy
