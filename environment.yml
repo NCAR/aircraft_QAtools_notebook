@@ -4,6 +4,7 @@ dependencies:
   - netCDF4
   - pandas
   - matplotlib
+  - seaborn
   - bokeh
   - numpy
   - metpy
