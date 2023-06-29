@@ -7,4 +7,3 @@ dependencies:
   - seaborn
   - bokeh
   - numpy
-  - metpy
