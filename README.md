@@ -1,9 +1,9 @@
-# EOL JupyterHub link:
+EOL JupyterHub link: `https://eol-alma8a.eol.ucar.edu:8000/jupyter/`
 
-# DOI: 
+DOI: 
 
-Static HTML export URL (append this with project and flight):
-`https://archive.eol.ucar.edu/raf/QAtools_notebook/ACCLIPrf01.html`
+Static HTML export URL:
+`https://archive.eol.ucar.edu/raf/QAtools/TI3GERrf01.html`
 
 # aircraft_QAtools_notebook
 
