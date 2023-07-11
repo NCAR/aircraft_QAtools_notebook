@@ -1,9 +1,9 @@
-EOL JupyterHub link: `https://eol-alma8a.eol.ucar.edu:8000/jupyter/`
+EOL JupyterHub link:
 
 DOI: 
 
 Static HTML export URL:
-`https://archive.eol.ucar.edu/raf/QAtools/TI3GERrf01.html`
+`https://archive.eol.ucar.edu/raf/QAtools_notebook_example.html`
 
 # aircraft_QAtools_notebook
 
