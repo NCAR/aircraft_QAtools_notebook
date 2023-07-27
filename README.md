@@ -1,4 +1,8 @@
 # aircraft_QAtools_notebook
+
+[![DOI:10.26023/a0e3-4n78](https://img.shields.io/badge/DOI-10.26023/a0e3-4n78-brightgreen.svg)](<https://doi.org/10.26023/a0e3-4n78>)
+
+
 ## Introduction
 This notebook contains plots that match the format and type provided in the R based QAtools Shiny web application and corresponding project specific pdfs. The table of contents allows users to navigate to the section of interest. The majority of the plots are generated using a python package called Bokeh. Bokeh allows users to pan and zoom within each plot as well as export each plot to a png. The Skew-T plot uses a python package called `metpy` and the non-interactive heatmap plots showing data from the cloud and aerosol probes use `seaborn`.
 
