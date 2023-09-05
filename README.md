@@ -24,7 +24,15 @@ Conda is used to control the packages required to run this notebook on EOL's Jup
 
 `conda env create -f environment.yml`
 
-### Use Case 2: HTML Exports
-HTML exports for each flight are generated and are placed on EOL's web server. These files will render interactive plots in the same was as the Jupyter Notebook. They do not require any data file in order to render the interactive plots. In otder to generate the HTML exports without the code shown, the following command is executed:
+#### Programmatic notebook execution
+A notebook can be executed using this command from the command line:
+`jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=600 --execute --inplace QAtools_notebook.ipynb`
 
+### Use Case 2: HTML Exports
+HTML exports for each flight are generated and are placed on EOL's web server. These files will render interactive plots in the same was as the Jupyter Notebook. They do not require any data file in order to render the interactive plots. In order to generate the HTML exports without the code shown, the following command is executed:
 `jupyter nbconvert QAtools_notebook.ipynb --no-input --to html`
+
+If you would like to pass arguments for project and flight from the command line, you can execute the included script auto_export.py which parses arguments for project (--project) and flight (--flight).
+
+An example is:
+`./auto_export QA_tools_notebook.ipynb --project <PROJECT> --flight <FLIGHT>`
