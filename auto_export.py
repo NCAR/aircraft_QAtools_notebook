@@ -1,4 +1,4 @@
-#! /bin/python3
+#! /Users/taylort/miniconda3/bin/python
 #####################################################################
 # Script to auto-generate QAtools Notebooks two arguments are 
 # needed: Project and Flight the notebook is executed with the args
@@ -43,7 +43,7 @@ os.system('jupyter nbconvert QAtools_notebook.ipynb --no-input --to html')
 os.system('mv QAtools_notebook.html ' + output_filename)
 
 # Copy
-try:
-    os.system('scp ' + output_filename + ' ads@tikal.eol.ucar.edu:/net/www/raf/QAtools')
-except:
-    print('Error copying file ' + output_filename + ' to /net/wwww/raf/QAtools')
+#try:
+#    os.system('scp ' + output_filename + ' ads@tikal.eol.ucar.edu:/net/www/raf/QAtools')
+#except:
+#    print('Error copying file ' + output_filename + ' to /net/wwww/raf/QAtools')
