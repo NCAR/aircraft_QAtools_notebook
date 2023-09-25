@@ -1,39 +1,43 @@
 [![DOI:<10.26023>](http://img.shields.io/badge/DOI-10.26023-green.svg)](https://doi.org/10.26023/a0e3-4n78)
 
 
-# aircraft_QAtools_notebook
+## QAtools_notebook README
 
-## Introduction
-This notebook contains plots that match the format and type provided in the R based QAtools Shiny web application and corresponding project specific pdfs. The table of contents allows users to navigate to the section of interest. The majority of the plots are generated using a python package called `Bokeh`. `Bokeh` allows users to pan and zoom within each plot as well as export each plot to a png. The Skew-T plot uses a python package called `metpy`.
+How to use this notebook:
 
-### Use Case 1: Jupyter Notebook on JupyterHub
-The notebook can be run from the Earth Observing Laboratory's JupyterHub multi-user server, using a set of shared credentials or with CIT credentials. Users will be prompted to enter their credentials in order to spawn an instance of the server. 
+### Option 1: Interactively
 
-The only variables that the user must assign prior to executing the cells in the notebook are flight and project. Once these are assigned by modifying the code text in the cell, the user can select `Run` and then `Run All`. The plots will be generated in the notebook. If a user wants to generate a set of interactive histogram / size distribution plots, they must set the flag `interactive_histogram==True`.
+You will need git and conda installed on the machine you are going to be running the notebook. 
 
-If a user wants to modify the plots, they can do this inline and generate their changes. If a user wants to modify the plots for others to see in separate checkouts, they must commit their change:
+Resources for installing / checking git and conda installation:
+https://github.com/git-guides/install-git
+https://conda.io/projects/conda/en/latest/user-guide/install/index.html 
 
-`git add QAtools_notebook.ipynb`
+The notebook is stored in this GitHub repository. To clone the repository, execute the following on the command line:
 
-`git commit`
+Git clone https://github.com/NCAR/aircraft_QAtools_notebook
 
-`git push`
+Then you will need to `cd` into the directory. There is a file `environment.yml` that contains a list of all of the dependencies needed to run the notebook. 
 
-#### Conda package management
-Conda is used to control the packages required to run this notebook. The packages and versions are listed in the environment.yml file that is located at the top level of the repository. This file can be used to create a conda environment by executing the following command:
+The following command can be used to create a conda environment based on the contents of the environment.yml file. 
 
-`conda env create -f environment.yml`
-`conda activate <environment_name>`
+`conda env create --file=environment.yml`
 
-#### Programmatic notebook execution
-A notebook can be executed using this command from the command line:
-`jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=600 --execute --inplace QAtools_notebook.ipynb`
+You will then need to activate this environment using this command:
 
-### Use Case 2: HTML Exports
-HTML exports for each flight are generated and are placed on EOL's web server. These files will render interactive plots in the same was as the Jupyter Notebook. They do not require any data file in order to render the interactive plots. In order to generate the HTML exports without the code shown, the following command is executed:
-`jupyter nbconvert QAtools_notebook.ipynb --no-input --to html`
+`conda activate qatools`
 
-If you would like to pass arguments for project and flight from the command line, you can execute the included script auto_export.py which parses arguments for project (--project) and flight (--flight).
+After this is complete, you can either type `jupyter-lab` or `jupyter-notebook` depending on the interface you would prefer.
 
-An example is:
-`./auto_export QA_tools_notebook.ipynb --project <PROJECT> --flight <FLIGHT>`
+This will launch the notebook in your browser, and you can modify the code directly. The two variables that you will need to change for the given project and flight that you are interested in generating plots for are: `project` and `flight`
+
+### Option 1: Command Line Mode
+
+If you would like to generate HTML exports from the notebook automatically, you can execute the script `auto_export.py` which provides you with the ability to pass command line arguments for project and flight. These will be stored and passed into the notebook at execution time. Then once the plots are generated, the output will be exported to HTML without the code sections included. This is the approach that is used when processing data on the RAF Ground Station Computer, as this script `auto_export.py` is called by `push_data.py`. 
+
+`./auto_export.py –project <PROJECT> – flight <FLIGHT>`
+
+If you are within EOL, the files will be copied to /net/www/raf/QAtools which is accessible externally via the following URL:
+
+`https://archive.eol.ucar.edu/raf/QAtools/<PROJECT><FLIGHT>.html`
+
