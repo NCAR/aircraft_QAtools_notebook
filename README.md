@@ -3,6 +3,8 @@
 
 ## QAtools_notebook README
 
+The QAtools_notebook is a Jupyter notebook that uses python to generate a set of interactive plots to aid NCAR RAF Science and Instrumentation Group in quick-detection of data quality status immediately following a flight. The notebook uses bokeh, metpy, and matplotlib to generate plots. The notebook requires that the flight netCDF is available via a defined path. You must update the path to point to the directory containing your data file(s).
+
 How to use this notebook:
 
 ### Option 1: Interactively
