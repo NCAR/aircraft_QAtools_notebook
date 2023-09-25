@@ -35,13 +35,16 @@ After this is complete, you can either type `jupyter-lab` or `jupyter-notebook` 
 
 This will launch the notebook in your browser, and you can modify the code directly. The two variables that you will need to change for the given project and flight that you are interested in generating plots for are: `project` and `flight`
 
-### Option 1: Command Line Mode
+### Option 2: Command Line Mode
 
 If you would like to generate HTML exports from the notebook automatically, you can execute the script `auto_export.py` which provides you with the ability to pass command line arguments for project and flight. These will be stored and passed into the notebook at execution time. Then once the plots are generated, the output will be exported to HTML without the code sections included. This is the approach that is used when processing data on the RAF Ground Station Computer, as this script `auto_export.py` is called by `push_data.py`. 
 
 `./auto_export.py –project <PROJECT> – flight <FLIGHT>`
 
+### Option 3: HTML Exports
+
 If you are within EOL, the files will be copied to /net/www/raf/QAtools which is accessible externally via the following URL:
 
 `https://archive.eol.ucar.edu/raf/QAtools/<PROJECT><FLIGHT>.html`
+
 
