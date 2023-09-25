@@ -10,12 +10,14 @@ How to use this notebook:
 You will need git and conda installed on the machine you are going to be running the notebook. 
 
 Resources for installing / checking git and conda installation:
+
 https://github.com/git-guides/install-git
+
 https://conda.io/projects/conda/en/latest/user-guide/install/index.html 
 
 The notebook is stored in this GitHub repository. To clone the repository, execute the following on the command line:
 
-Git clone https://github.com/NCAR/aircraft_QAtools_notebook
+`git clone https://github.com/NCAR/aircraft_QAtools_notebook`
 
 Then you will need to `cd` into the directory. There is a file `environment.yml` that contains a list of all of the dependencies needed to run the notebook. 
 
