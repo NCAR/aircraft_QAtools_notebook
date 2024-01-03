@@ -1,4 +1,4 @@
-#! /Users/taylort/miniconda3/bin/python
+#!/usr/bin/env python
 #####################################################################
 # Script to auto-generate QAtools Notebooks two arguments are 
 # needed: Project and Flight the notebook is executed with the args
