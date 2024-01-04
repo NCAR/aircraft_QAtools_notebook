@@ -34,7 +34,9 @@ os.system('echo "export QA_PROJ="qa_project"" >> ~/.qa_vars')
 os.system('echo "export QA_FLIGHT="qa_flight"" >> ~/.qa_vars')
 
 # Execute the cells in the notebook
-os.system('jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=600 --execute --inplace QAtools_notebook.ipynb')
+# Set PYDEVD_DISABLE_FILE_VALIDATION=1 to supress debugger warning about
+# frozen modules causing debugger to miss breakpoints
+os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=600 --execute --inplace QAtools_notebook.ipynb')
 
 # Convert to HTML
 os.system('jupyter nbconvert QAtools_notebook.ipynb --no-input --to html')
