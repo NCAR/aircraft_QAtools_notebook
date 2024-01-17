@@ -62,4 +62,16 @@ The crontab entry is:
 
 `*/10 * * * * cd /net/www/raf/QAtools; tree -H '.' -L 1 --noreport -I "index.html" -o /net/www/raf/QAtools/index.html`
 
+## CAUTION
+
+Just because auto_export.py completes without error does not mean the HTML file contains valid plots. 
+
+```
+> ./auto_export.py --project ACCLIP --flight rf01
+[NbConvertApp] Converting notebook QAtools_notebook.ipynb to notebook
+[NbConvertApp] Writing 177795 bytes to QAtools_notebook.ipynb
+[NbConvertApp] Converting notebook QAtools_notebook.ipynb to html
+[NbConvertApp] Writing 425557 bytes to QAtools_notebook.html
+```
+Notice the small size of the QAtools_notebook.html file. It should be 200-400MB rather than 400KB. If you view the HTML file, the plots will show errors that need to be fixed.
 
