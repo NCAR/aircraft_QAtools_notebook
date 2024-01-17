@@ -36,7 +36,7 @@ You will then need to activate this environment using this command:
 
 After this is complete, you can either type `jupyter-lab` or `jupyter-notebook` depending on the interface you would prefer.
 
-This will launch the notebook in your browser, and you can modify the code directly. The two variables that you will need to change for the given project and flight that you are interested in generating plots for are: `project` and `flight`.
+This will launch the notebook in your browser, and you can modify the code directly. The two variables that you will need to change for the given project and flight that you are interested in generating plots for are: `project` and `flight`. To run the code, click on a cell to select it, then press the play button in the toolbar above.
 
 You can also update `interactive_histogram` to either True or False. Your selection will determine whether histogram / size distribution heatmap plots are generated for corresponding data. 
 
