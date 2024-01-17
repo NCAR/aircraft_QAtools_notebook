@@ -9,7 +9,7 @@ How to use this notebook:
 
 ### Option 1: Interactively
 
-You will need git and conda installed on the machine you are going to be running the notebook. 
+You will need git, conda, and firefox installed on the machine you are going to be running the notebook. 
 
 Resource for installing / checking git and conda installation:
 
