@@ -9,11 +9,12 @@ How to use this notebook:
 
 ### Option 1: Interactively
 
-You will need conda installed on the machine you are going to be running the notebook. 
+You will need git and conda installed on the machine you are going to be running the notebook. 
 
-Resource for installing / checking conda installation:
+Resource for installing / checking git and conda installation:
 
-https://conda.io/projects/conda/en/latest/user-guide/install/index.html 
+* https://github.com/git-guides/install-git
+* https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 
 The notebook is stored in this GitHub repository. To clone the repository, execute the following on the command line:
 
@@ -44,6 +45,8 @@ You can also update `interactive_histogram` to either True or False. Your select
 If you would like to generate HTML exports from the notebook automatically, you can execute the script `auto_export.py` which provides you with the ability to pass command line arguments for project and flight. These will be stored and passed into the notebook at execution time. Then once the plots are generated, the output will be exported to HTML without the code sections included. This is the approach that is used when processing data on the RAF Ground Station Computer, as this script `auto_export.py` is called by `push_data.py`. 
 
 `./auto_export.py –project <PROJECT> – flight <FLIGHT>`
+
+The repo is checked out at /home/local/aircraft_QAtools_notebook and if GDRIVE = True in fieldProc_setup, then then the output HTML will sync to Google Drive. Then it will sync to /net/www/raf/QAtools on EOL servers.
 
 ### Option 3: HTML Exports
 
