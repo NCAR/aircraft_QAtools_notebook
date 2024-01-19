@@ -5,9 +5,7 @@
 
 The QAtools_notebook is a Jupyter notebook that uses python to generate a set of interactive plots to aid NCAR RAF Science and Instrumentation Group in quick-detection of data quality status immediately following a flight. The notebook uses bokeh, metpy, and matplotlib to generate plots. The notebook requires that the flight netCDF is available via a defined path. You must update the path to point to the directory containing your data file(s).
 
-How to use this notebook:
-
-### Option 1: Interactively
+### Installation
 
 You will need git, conda, and firefox installed on the machine you are going to be running the notebook. 
 
@@ -34,7 +32,26 @@ You will then need to activate this environment using this command:
 
 `conda activate qatools`
 
-After this is complete, you can either type `jupyter-lab` or `jupyter-notebook` depending on the interface you would prefer.
+As of Jan 2024, the environment.yml file is OS-dependent. If it doesn't work on your OS, install the following packages manually:
+```
+python -m pip install jupyter
+python -m pip install netCDF4
+python -m pip install seaborn
+python -m pip install scipy
+python -m pip install metpy
+python -m pip install bokeh
+python -m pip install holoviews
+python -m pip install hvplot
+python -m pip install numpy
+```
+
+-----
+
+How to use this notebook:
+
+### Option 1: Interactively
+
+After installation is complete, you can either type `jupyter-lab` or `jupyter-notebook` depending on the interface you would prefer.
 
 This will launch the notebook in your browser, and you can modify the code directly. The two variables that you will need to change for the given project and flight that you are interested in generating plots for are: `project` and `flight`. To run the code, click on a cell to select it, then press the play button in the toolbar above.
 
