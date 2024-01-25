@@ -63,21 +63,7 @@ If you would like to generate HTML exports from the notebook automatically, you 
 
 `./auto_export.py –project <PROJECT> – flight <FLIGHT>`
 
-The repo is checked out at /home/local/aircraft_QAtools_notebook and if GDRIVE = True in fieldProc_setup, then then the output HTML will sync to Google Drive. Then it will sync to /net/www/raf/QAtools on EOL servers.
-
-### Option 3: HTML Exports
-
-If you are within EOL, the files will be copied to /net/www/raf/QAtools which is accessible externally via the following URL:
-
-`https://archive.eol.ucar.edu/raf/QAtools/<PROJECT><FLIGHT>.html`
-
-There is a one-line entry in the ads user crontab on eol-rosetta that regenerates an index.html file every 10 minutes to capture new QA html files written to /net/www/raf/QAtools. To see what QAtool Notebooks are available, go to:
-
-`https://archive.eol.ucar.edu/raf/QAtools/index.html`
-
-The crontab entry is: 
-
-`*/10 * * * * cd /net/www/raf/QAtools; tree -H '.' -L 1 --noreport -I "index.html" -o /net/www/raf/QAtools/index.html`
+The repo is checked out at /home/local/aircraft_QAtools_notebook and if GDRIVE = True in fieldProc_setup, then then the output HTML will sync to Google Drive. Then it will sync to /scr/raf_Raw_Data/CAESAR/field_sync on EOL servers.
 
 ## CAUTION
 
