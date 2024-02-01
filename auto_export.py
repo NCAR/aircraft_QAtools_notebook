@@ -17,12 +17,14 @@ import os
 parser = argparse.ArgumentParser()
 parser.add_argument('--project', type=str, required=True)
 parser.add_argument('--flight', type=str, required=True)
+parser.add_argument('--format', type=str, choices = ['html','pdf'], default = 'html',required=False)
 args = parser.parse_args()
 
 # Assign arguments
 qa_project = args.project
 qa_flight = args.flight
-output_filename = qa_project+qa_flight+'.html'
+qa_format = args.format
+output_filename = qa_project+qa_flight
 
 # Create environment vars to be used by the notebook
 os.environ['QA_CL'] = 'command_line_mode'
@@ -38,8 +40,7 @@ os.system('echo "export QA_FLIGHT="qa_flight"" >> ~/.qa_vars')
 # frozen modules causing debugger to miss breakpoints
 os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=600 --execute --inplace QAtools_notebook.ipynb')
 
-# Convert to HTML
-os.system('jupyter nbconvert QAtools_notebook.ipynb --no-input --to html')
-
-# Rename
-os.system('mv QAtools_notebook.html ' + output_filename)
+# Convert to HTML or PDF
+if qa_format =='pdf':
+    qa_format='webpdf'
+os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --allow-chromium-download --no-input --to '+qa_format)
