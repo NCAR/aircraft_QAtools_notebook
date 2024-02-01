@@ -32,17 +32,22 @@ You will then need to activate this environment using this command:
 
 `conda activate qatools`
 
+If you wish to conver the output to a pdf you will then need to install chromium using this command:
+
+`playwright install chromium`
+
 As of Jan 2024, the environment.yml file is OS-dependent. If it doesn't work on your OS, install the following packages manually:
 ```
 python -m pip install jupyter
 python -m pip install netCDF4
-python -m pip install seaborn
 python -m pip install scipy
 python -m pip install metpy
 python -m pip install bokeh
 python -m pip install holoviews
 python -m pip install hvplot
 python -m pip install numpy
+python -m pip install nbconvert[webpdf]
+playwright install chromium
 ```
 
 -----
@@ -61,7 +66,11 @@ You can also update `interactive_histogram` to either True or False. Your select
 
 If you would like to generate HTML exports from the notebook automatically, you can execute the script `auto_export.py` which provides you with the ability to pass command line arguments for project and flight. These will be stored and passed into the notebook at execution time. Then once the plots are generated, the output will be exported to HTML without the code sections included. This is the approach that is used when processing data on the RAF Ground Station Computer, as this script `auto_export.py` is called by `push_data.py`. 
 
-`./auto_export.py –project <PROJECT> – flight <FLIGHT>`
+`./auto_export.py --project <PROJECT> --flight <FLIGHT>`
+
+If you would like to generate a pdf export of the notebook using the same method, add the optional argument `--format pdf`:
+
+`./auto_export.py --project <PROJECT> --flight <FLIGHT> --format pdf`
 
 The repo is checked out at /home/local/aircraft_QAtools_notebook and if GDRIVE = True in fieldProc_setup, then then the output HTML will sync to Google Drive. Then it will sync to /scr/raf_Raw_Data/CAESAR/field_sync on EOL servers.
 
