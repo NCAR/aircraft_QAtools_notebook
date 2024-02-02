@@ -32,25 +32,9 @@ You will then need to activate this environment using this command:
 
 `conda activate qatools`
 
-If you wish to conver the output to a pdf you will then need to install chromium using this command:
+If you wish to conver the output to a pdf using webPDF you will then need to install chromium using this command:
 
 `playwright install chromium`
-
-As of Jan 2024, the environment.yml file is OS-dependent. If it doesn't work on your OS, install the following packages manually:
-```
-python -m pip install jupyter
-python -m pip install netCDF4
-python -m pip install scipy
-python -m pip install metpy
-python -m pip install bokeh
-python -m pip install holoviews
-python -m pip install hvplot
-python -m pip install numpy
-python -m pip install nbconvert[webpdf]
-playwright install chromium
-```
-
------
 
 How to use this notebook:
 
