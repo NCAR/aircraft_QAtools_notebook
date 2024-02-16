@@ -38,7 +38,7 @@ os.system('echo "export QA_FLIGHT="qa_flight"" >> ~/.qa_vars')
 # Execute the cells in the notebook
 # Set PYDEVD_DISABLE_FILE_VALIDATION=1 to supress debugger warning about
 # frozen modules causing debugger to miss breakpoints
-os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=600 --execute --inplace QAtools_notebook.ipynb')
+os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=-1 --execute --inplace QAtools_notebook.ipynb')
 
 # Convert to HTML or PDF
 if qa_format =='pdf':
