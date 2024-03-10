@@ -25,6 +25,7 @@ qa_project = args.project
 qa_flight = args.flight
 qa_format = args.format
 output_filename = qa_project+qa_flight
+hist_filename = output_filename +'_aerosol-cloud'
 
 # Create environment vars to be used by the notebook
 os.environ['QA_CL'] = 'command_line_mode'
@@ -41,6 +42,13 @@ os.system('echo "export QA_FLIGHT="qa_flight"" >> ~/.qa_vars')
 os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=-1 --execute --inplace QAtools_notebook.ipynb')
 
 # Convert to HTML or PDF
-if qa_format =='pdf':
-    qa_format='webpdf'
-os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --allow-chromium-download --no-input --to '+qa_format)
+
+os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --no-input --to html')
+os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --allow-chromium-download --to webpdf')
+
+os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=-1 --execute --inplace interactive_hist.ipynb')
+
+# Convert to HTML or PDF
+os.system('jupyter nbconvert interactive_hist.ipynb --output '+hist_filename+' --no-input --to html')
+os.system('jupyter nbconvert --clear-output --inplace interactive_hist.ipynb')
+#os.system('jupyter nbconvert interactive_hist.ipynb --output '+hist_filename+' --allow-chromium-download --no-input --to webpdf') ##Too large to run currently
