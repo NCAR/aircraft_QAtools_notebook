@@ -32,7 +32,7 @@ You will then need to activate this environment using this command:
 
 `conda activate qatools`
 
-If you wish to conver the output to a pdf using webPDF you will then need to install chromium using this command:
+If you wish to convert the output to a pdf using webPDF you will then need to install chromium using this command:
 
 `playwright install chromium`
 
