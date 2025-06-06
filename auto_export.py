@@ -44,7 +44,7 @@ os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --al
 # Convert to HTML or PDF
 
 os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --no-input --to html')
-os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --no-input --allow-chromium-download --to webpdf')
+os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+' --no-input --allow-chromium-download --to webpdf --PDFExporter.paginate=False --HTMLExporter.theme=light')
 
 os.system('PYDEVD_DISABLE_FILE_VALIDATION=1 jupyter nbconvert --to notebook --allow-errors --ExecutePreprocessor.timeout=-1 --execute --inplace interactive_hist.ipynb')
 
