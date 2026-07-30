@@ -52,7 +52,8 @@ os.system('jupyter nbconvert QAtools_notebook.ipynb --output '+output_filename+'
 # Convert to PDF based on format
 def html_to_pdf_playwright(html_file, pdf_file):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True,
+                args=['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'])
         page = browser.new_page()
         
         # Load the HTML file
