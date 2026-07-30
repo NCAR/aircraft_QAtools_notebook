@@ -56,7 +56,7 @@ If you would like to generate a pdf export of the notebook using the same method
 
 `./auto_export.py --project <PROJECT> --flight <FLIGHT> --format pdf`
 
-The repo is checked out at /home/local/aircraft_QAtools_notebook and if GDRIVE = True in fieldProc_setup, then then the output HTML will sync to Google Drive. Then it will sync to /scr/raf_Raw_Data/CAESAR/field_sync on EOL servers.
+The repo is checked out at /home/local/aircraft_QAtools_notebook and if GDRIVE = True in fieldProc_setup, then then the output HTML will sync to Google Drive. Then it will sync to `/scr/raf_Raw_Data/<project>/field_sync` on EOL servers.
 
 ## CAUTION
 
